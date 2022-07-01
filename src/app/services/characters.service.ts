@@ -14,4 +14,8 @@ export class CharactersService {
   getCharacters() {
     return this.http.get(APIURL.characters);
   }
+
+  getCharacter(id: string) {
+    return this.http.get(`${APIURL.characters}/${id}`);
+  }
 }
