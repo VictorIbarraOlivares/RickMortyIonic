@@ -8,7 +8,7 @@ import { CharactersService } from 'src/app/services/characters.service';
   styleUrls: ['./characters.page.scss'],
 })
 export class CharactersPage implements OnInit {
-
+  Character:any = [];
   constructor(
     private routeActive: ActivatedRoute,
     private characterService: CharactersService
@@ -17,7 +17,7 @@ export class CharactersPage implements OnInit {
   ngOnInit() {
     const id = this.routeActive.snapshot.paramMap.get('id');
     this.characterService.getCharacter(id).subscribe(char => {
-      console.log(char);
+      this.Character = char;
     });
   }
 
